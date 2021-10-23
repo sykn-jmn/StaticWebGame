@@ -1,10 +1,10 @@
 #board{
     margin: auto;
     margin-top: 50px;
-    width: 500px;
-    height: 500px;
+    width: 80vmin;
+    height: 80vmin;
     background-image: url("assets/board.png");
-    background-size: 500px 500px;
+    background-size: 80vmin 80vmin;
     -webkit-box-shadow: 0 10px 6px -6px #777;
      -moz-box-shadow: 0 10px 6px -6px #777;
           box-shadow: 0 10px 6px -6px #777;
@@ -18,6 +18,10 @@
 
 .square:hover{
     border: 1px solid yellow;
+}
+
+.highlighted{
+    background: rgba(0,255,0,0.3);
 }
 
 .piece{

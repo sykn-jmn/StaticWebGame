@@ -14,7 +14,7 @@ function addSquares(){
 }
 
 function reloadBoard(board, possibleMoves, isWhiteTurn){
-    this.updateTurn(isWhiteTurn?"WHITE":"BLACK");
+    this.updateTurn(isWhiteTurn);
     for(var x = 0; x<8; x++){
         for(var y = 0; y<8; y++){
             removeHighlight(x+""+y);
@@ -31,9 +31,14 @@ function reloadBoard(board, possibleMoves, isWhiteTurn){
     })
 }
 
-function updateTurn(turn){
+function updateTurn(isWhiteTurn){
     var turnDisplay = document.getElementById("turn");
-    turnDisplay.textContent = turn+ "'S TURN";
+    var text = isWhiteTurn?"WHITE":"BLACK";
+    var color = isWhiteTurn?"black":"white";
+    var background = isWhiteTurn?"white":"black";
+    var html =  "<h2 style = \"color:"+color+"; background:"+background+"; padding:5px\">"+text+"</h2>";
+    console.log(html);
+    turnDisplay.innerHTML = html;
 }
 
 function highlight(id){

@@ -23,12 +23,12 @@
     box-shadow: 0 0 0 1px rgb(82,56,21) inset;
 }
 
-.square:hover{
-    filter: brightness(140%)
+.square:hover img{
+    filter: contrast(0.6) brightness(1.4)
 }
 
 .highlighted{
-    filter: brightness(1) contrast();
+    box-shadow: 0 0 0 2px rgba(0,255,0,0.7) inset;
 }
 
 .piece{

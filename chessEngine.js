@@ -123,13 +123,29 @@ class ChessEngine {
         this.addPossibleMove(ix,iy);
         if (this.pieceOnHand.getType() == 'pawn') {
             if (this.pieceOnHand.getColor() == 'white') {
-                this.addPossibleMove(ix,(iy - 1));
-                if (iy == 6) {
+                if(ix-1>=0 && iy-1>=0 && !this.isFree(ix-1,iy-1) && this.isOpposite(ix-1,iy-1)){
+                    this.addPossibleMove(ix-1,iy-1)
+                }
+                if(ix+1<80 && iy-1>=0 && !this.isFree(ix+1,iy-1) && this.isOpposite(ix+1,iy-1)){
+                    this.addPossibleMove(ix+1,iy-1)
+                }
+                if(this.isFree(ix,iy-1)){
+                    this.addPossibleMove(ix,(iy - 1));
+                }
+                if (iy == 6 && this.isFree(ix,iy-2)) {
                     this.addPossibleMove(ix,(iy - 2));
                 }
             } else {
-                this.addPossibleMove(ix,(iy + 1));
-                if (iy == 1) {
+                if(ix-1>=0 && iy+1<8 && !this.isFree(ix-1,iy+1) && this.isOpposite(ix-1,iy+1)){
+                    this.addPossibleMove(ix-1,iy+1)
+                }
+                if(ix+1<8 && iy+1<8 && !this.isFree(ix+1,iy+1) && this.isOpposite(ix+1,iy+1)){
+                    this.addPossibleMove(ix+1,iy+1)
+                }
+                if(this.isFree(ix,iy+1)){
+                    this.addPossibleMove(ix,(iy + 1));
+                }
+                if (iy == 1 && this.isFree(ix,iy+2)) {
                     this.addPossibleMove(ix,(iy + 2));
                 }
             }

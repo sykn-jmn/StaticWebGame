@@ -5,8 +5,9 @@ function addSquares(){
         row.style.cssText = "width:100%; height:12.5%; display: flex"
         for(var j = 0; j <8; j++){
             var square = document.createElement('span');
-            square.className = "square";
-            square.id = j+""+i;
+            var color = ((i%2!=0)?(j%2!=0):(j%2==0))?"light":"dark";
+            square.setAttribute("id",(j+""+i));
+            square.setAttribute("class","square "+color);
             row.appendChild(square);
         }
         board.appendChild(row);
@@ -44,13 +45,13 @@ function updateTurn(isWhiteTurn){
 function highlight(id){
     var square = document.getElementById(id);
     if(square !== null){
-        square.className = "square highlighted";
+        square.classList.add("highlighted");
     }
 }
 
 function removeHighlight(id){
     var square = document.getElementById(id);
-    square.className = "square";
+    square.classList.remove("highlighted");
 }
 
 function removePiece(x,y){

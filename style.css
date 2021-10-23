@@ -1,10 +1,10 @@
 #board{
     margin: auto;
     margin-top: 50px;
-    width: 80vmin;
-    height: 80vmin;
+    width: 90vmin;
+    height: 90vmin;
     background-image: url("assets/board.png");
-    background-size: 80vmin 80vmin;
+    background-size: 90vmin 90vmin;
     -webkit-box-shadow: 0 10px 6px -6px #777;
      -moz-box-shadow: 0 10px 6px -6px #777;
           box-shadow: 0 10px 6px -6px #777;

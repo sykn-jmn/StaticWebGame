@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div id="main-body">
-        <div id="turn" style="position: absolute; top: 0; bottom: 0;">WHITE's TURN</div>
-        <div id="board" style="position: relative;"></div>
+        <div id="turn" style="position: absolute;">
+            <h1>WHITE's TURN</h1>
+        </div>
+        <div id="main-board" style="position: relative;">
+            <div id="board" style="position: relative;"></div>
+        </div>
+        <div id="invisible">
+            <div id="hiddenBoard"></div>
+        </div>
     </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.5.2/jquery-ui.min.js"></script>
 <script src="display.js"></script>
 <script src="./chessEngine.js"></script>
 <script src="./app.js"></script>
+
 </html>

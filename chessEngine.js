@@ -126,7 +126,7 @@ class ChessEngine {
                 if(ix-1>=0 && iy-1>=0 && !this.isFree(ix-1,iy-1) && this.isOpposite(ix-1,iy-1)){
                     this.addPossibleMove(ix-1,iy-1)
                 }
-                if(ix+1<80 && iy-1>=0 && !this.isFree(ix+1,iy-1) && this.isOpposite(ix+1,iy-1)){
+                if(ix+1<8 && iy-1>=0 && !this.isFree(ix+1,iy-1) && this.isOpposite(ix+1,iy-1)){
                     this.addPossibleMove(ix+1,iy-1)
                 }
                 if(this.isFree(ix,iy-1)){

@@ -1,17 +1,35 @@
+whitesTurn = true;
 function addSquares(){
     var board = document.getElementById('board');
+    var hiddenBoard = document.getElementById('hiddenBoard');
     for(var i = 0; i <8; i++){
         var row = document.createElement('div')
+        var hiddenRow = document.createElement('div')
         row.style.cssText = "width:100%; height:12.5%; display: flex"
+        hiddenRow.style.cssText = "width:100%; height:12.5%; display: flex"
         for(var j = 0; j <8; j++){
             var square = document.createElement('span');
             var color = ((i%2!=0)?(j%2!=0):(j%2==0))?"light":"dark";
             square.setAttribute("id",(j+""+i));
             square.setAttribute("class","square "+color);
+
+            var hiddenSquare = document.createElement('span');
+            hiddenSquare.setAttribute("id",("H"+j+""+i));
+            hiddenSquare.setAttribute("class","hiddenSquare");
+
             row.appendChild(square);
+            hiddenRow.appendChild(hiddenSquare);
         }
         board.appendChild(row);
+        hiddenBoard.appendChild(hiddenRow);
     }
+}
+
+function showTurnDisplay(){
+    jQuery("#turn").fadeIn(1000).fadeOut(1000);
+}
+function updateDisplayText(text){
+    jQuery("#turn h1").text(text)
 }
 
 function reloadBoard(board, possibleMoves, isWhiteTurn){
@@ -33,13 +51,12 @@ function reloadBoard(board, possibleMoves, isWhiteTurn){
 }
 
 function updateTurn(isWhiteTurn){
-    var turnDisplay = document.getElementById("turn");
-    var text = isWhiteTurn?"WHITE":"BLACK";
-    var color = isWhiteTurn?"black":"white";
-    var background = isWhiteTurn?"white":"black";
-    var html =  "<h2 style = \"color:"+color+"; background:"+background+"; padding:5px\">"+text+"</h2>";
-    console.log(html);
-    turnDisplay.innerHTML = html;
+    var text = isWhiteTurn?"White's Turn":"Black's Turn";
+    updateDisplayText(text);
+    if(whitesTurn!=isWhiteTurn){
+        showTurnDisplay();
+        whitesTurn=isWhiteTurn;
+    }
 }
 
 function highlight(id){

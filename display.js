@@ -26,7 +26,7 @@ function addSquares(){
 }
 
 function showTurnDisplay(){
-    jQuery("#turn").fadeIn(1000).fadeOut(1000);
+    jQuery("#turn").fadeIn(600).fadeOut(600);
 }
 function updateDisplayText(text){
     jQuery("#turn h1").text(text)
